@@ -4,7 +4,123 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/logo.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="icon" href="icon.jpg" type="image/jpg" />
+    <title>Demo: Bankist</title>
   </head>
-  <body></body>
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <p class="message">Log in to get started</p>
+      <div class="logo">
+        <div class="logo-component-row">
+          <div class="logo-component"></div>
+          <div class="logo-component"></div>
+        </div>
+        <div class="logo-component-column">
+          <div class="logo-component"></div>
+          <div class="logo-component"></div>
+        </div>
+      </div>
+      <form class="user-login">
+        <input type="text" class="user" placeholder="user" />
+        <input type="text" class="pin" placeholder="PIN" />
+        <button class="user-login-submit">→</button>
+      </form>
+    </nav>
+
+    <main class="app hidden">
+      <!-- balance -->
+      <div class="balance">
+        <div>
+          <p class="balance-heading">Current balance</p>
+          <p class="balance-date"></p>
+        </div>
+
+        <p class="balance-amount"></p>
+      </div>
+
+      <!-- movements -->
+      <section class="movements"></section>
+
+      <!-- transfer money operation -->
+      <div class="operation-transfer">
+        <h2>Transfer Money</h2>
+        <form class="transfer-money">
+          <input type="text" class="operations-input transfer-user-input" />
+
+          <input type="number" class="operations-input transfer-amount-input" />
+
+          <button class="operations-button transfer-button">→</button>
+          <label for=" transfer-user-input " class="operations-label"
+            >Transfer to</label
+          >
+          <label for=" transfer-amount-input " class="operations-label"
+            >Amount</label
+          >
+        </form>
+      </div>
+      <!-- request loan operation -->
+      <div class="operation-loan">
+        <h2>Request Loan</h2>
+        <form class="loan-request">
+          <input type="number" class="operations-input loan-amount-input" />
+
+          <button class="operations-button loan-button">→</button>
+          <label for="loan-amount-input " class="operations-label"
+            >Amount</label
+          >
+        </form>
+      </div>
+      <!-- close account operation -->
+      <div class="operation-close">
+        <h2>Close Account</h2>
+        <form class="close-account">
+          <input type="text" class="operations-input close-user-input" />
+          <input type="number" class="operations-input close-pin-input" />
+          <button class="operations-button close-button">→</button>
+          <label for="close-user-input " class="operations-label"
+            >Confirm User</label
+          >
+
+          <label for="close-pin-input " class="operations-label"
+            >Confirm PIN</label
+          >
+        </form>
+      </div>
+
+      <!-- summary -->
+      <section class="summary">
+        <div class="summary-in">
+          <p>IN</p>
+          <p class="summary-green summary-in-amount">27 035,20 €</p>
+        </div>
+        <div class="summary-out">
+          <p>OUT</p>
+          <p class="summary-red summary-out-amount">1082,61 €</p>
+        </div>
+        <div class="summary-interest">
+          <p>INTEREST</p>
+          <p class="summary-green summary-interest-amount">323,46 €</p>
+        </div>
+        <button class="sort">
+          <div class="sort-ascending">↑ SORT</div>
+          <div class="sort-descending hidden">↓ SORT</div>
+        </button>
+      </section>
+
+      <!-- timer -->
+      <section class="timer">
+        <p>You will be logged out in <span class="time">10:00</span></p>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
 </html>

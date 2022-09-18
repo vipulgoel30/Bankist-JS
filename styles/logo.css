@@ -1,0 +1,23 @@
+.logo {
+  width: 5rem;
+  height: 5rem;
+  position: relative;
+}
+[class^="logo-component-"] {
+  position: absolute;
+  display: flex;
+}
+.logo-component-row {
+  top: 1.25rem;
+}
+
+.logo-component-column {
+  left: 1.25rem;
+  flex-direction: column;
+}
+.logo-component {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 100%;
+  border: 0.25rem solid #333;
+}

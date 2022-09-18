@@ -1,0 +1,282 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #f3f3f3;
+  padding: 2rem 2rem 0;
+  color: #444;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Nav bar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  background-color: transparent;
+}
+
+.message {
+  font-size: 1.9rem;
+  font-weight: 500;
+}
+
+.user-login {
+  display: flex;
+  gap: 1rem;
+}
+
+.user-login input {
+  width: 12rem;
+  border-radius: 2rem;
+  font-size: 1.6rem;
+  text-align: center;
+  outline: none;
+  border: 0.1rem solid #fff;
+  padding: 0.5rem 2rem;
+  transition: border 0.3s;
+  font-family: inherit;
+}
+.user-login input:focus {
+  border: 0.1rem solid #bbb;
+}
+.user-login input::placeholder {
+  color: #bbb;
+}
+
+.user-login-submit {
+  font-size: 2.2rem;
+  color: #333;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+  transition: color 0.5s;
+}
+
+.user-login-submit:hover {
+  color: #bbb;
+}
+
+/* main app */
+.app {
+  margin: 4rem auto 0;
+  max-width: 100rem;
+
+  opacity: 0;
+  display: grid;
+  grid-template-columns: 4fr 3fr;
+  grid-template-rows: auto repeat(3, 15rem) auto;
+  grid-column-gap: 2rem;
+  grid-row-gap: 1rem;
+  transition: all 1s;
+  translate: 0 10rem;
+}
+@keyframes slideUp {
+  100% {
+    translate: 0;
+  }
+}
+/* Balance */
+.balance {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  grid-column: 1/-1;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.balance-heading {
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+
+.balance-date {
+  font-size: 1.4rem;
+  color: #938a8a;
+}
+.balance-amount {
+  font-size: 4.5rem;
+}
+
+/* Movements */
+
+.movements {
+  grid-column: 1/2;
+  grid-row: 2/5;
+  overflow: scroll;
+  border-radius: 1rem;
+  background-color: #fff;
+}
+
+.movements-item {
+  padding: 2.25rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.movements-item:not(:last-child) {
+  border-bottom: 0.1rem solid #eee;
+}
+.movements-data {
+  display: flex;
+  gap: 2rem;
+}
+
+[class^="movements-remarks-"] {
+  font-size: 1.1rem;
+  color: #fff;
+  padding: 0.1rem 1rem;
+  border-radius: 10rem;
+}
+
+[class$="-deposit"] {
+  background: linear-gradient(to top left, #39b385, #9be15d);
+}
+
+[class$="-withdrawl"] {
+  background: linear-gradient(to top left, #e52a5a, #ff585f);
+}
+.movements-date {
+  font-size: 1.1rem;
+  color: #666;
+  font-weight: 500;
+}
+.movement-amount {
+  font-size: 1.7rem;
+}
+
+/* common operations */
+[class^="operation-"] {
+  border-radius: 1rem;
+  grid-column: 2/3;
+  padding: 3rem 4rem;
+}
+[class^="operation-"] h2 {
+  font-size: 1.7rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-weight: 600;
+}
+[class^="operation-"] form {
+  display: grid;
+  grid-template-columns: 2.5fr 2.5fr 1fr;
+  grid-template-rows: auto auto;
+  grid-column-gap: 1rem;
+  grid-row-gap: 0.4rem;
+}
+
+.operations-input {
+  padding: 0.4rem 1rem;
+  border-radius: 0.7rem;
+  width: 100%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  font-size: 1.5rem;
+  text-align: center;
+  color: #333;
+  font-family: inherit;
+  transition: all 0.3s;
+}
+.operations-input:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.operations-button {
+  border: none;
+  cursor: pointer;
+  border-radius: 0.7rem;
+  font-size: 1.7rem;
+  transition: all 0.3s;
+}
+.operations-button:focus {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.operations-label {
+  text-align: center;
+  font-size: 1.3rem;
+}
+/* transfer money operations */
+[class$="-transfer"] {
+  grid-row: 2/3;
+  background: linear-gradient(to top left, #ffb003, #ffcb03);
+}
+
+/*  loan request operations */
+[class$="-loan"] {
+  grid-row: 3/4;
+  background: linear-gradient(to top left, #39b385, #9be15d);
+}
+[class^="operation-"] .loan-request {
+  grid-template-columns: 2.5fr 1fr 2.5fr;
+}
+[for^="loan-amount-input"] {
+  grid-column: 1/2;
+}
+/*  close account operations */
+[class$="-close"] {
+  grid-row: 4/5;
+  background: linear-gradient(to top left, #e52a5a, #ff585f);
+}
+
+/* summary */
+.summary {
+  margin-top: 1rem;
+  grid-column: 1/2;
+  grid-row: 5/-1;
+  display: flex;
+  gap: 1.7rem;
+  align-items: center;
+}
+[class^="summary-"] {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+[class^="summary-"] p:first-child {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.summary-green {
+  color: #66c873;
+  font-size: 2.2rem;
+}
+.summary-red {
+  color: #f5465d;
+  font-size: 2.4rem;
+}
+.sort {
+  font-size: 1.6rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background-color: inherit;
+}
+.sort:focus {
+  color: #777;
+}
+.hidden {
+  display: none;
+}
+
+/* timer */
+.timer {
+  grid-column: 2/-1;
+  grid-row: 5/-1;
+  text-align: right;
+  margin-top: 1.9rem;
+  font-size: 1.25rem;
+}
+
+.timer p .time {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
