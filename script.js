@@ -88,6 +88,9 @@ const sortDescending = document.querySelector(".sort-descending");
 // for the time
 const time = document.querySelector(".time");
 
+// for data show
+const data = document.querySelector('.data');
+
 // RESET FORMS DEFAULT
 forms.forEach((element) => {
   element.addEventListener("submit", function (event) {
@@ -126,7 +129,7 @@ function showUserConsole(userData) {
   As of ${date.toLocaleDateString(
     currentUser.locale
   )}, ${date.toLocaleTimeString(currentUser.locale)}`;
-
+  data.classList.add('hidden');
   // Show whole data
   balanceAmountDisplay();
   movementsDisplay();
